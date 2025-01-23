@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package udp_server;
+// The request message containing the user's name.
+message NewUserRequest {
+  required string name = 1;
+}
+
+// The response message containing the greetings
+message ReplyUserResponse {
+  required string name = 1;
+}
+
+message RequestStartSendingFile {
+  required string fileName = 1;
+  required uint32 chunkSize = 3;
+  required uint32 chunkCount = 4;
+  required uint32 fileId = 5;
+}
+
+message ReplyStartSendingFile {
+  required uint32 fileId = 1;
+  required uint32 serverFileId = 2;
+}
+
+message FileChunk {
+  required uint32 fileId = 1;
+  required uint32 chunkNumber = 2;
+  required bytes chunk = 3;
+}
+
+message FileEndMd5 {
+  required uint32 fileId = 1;
+  required bytes md5 = 3;
+}
+
+message RequestFileChunk {
+  required uint32 fileId = 1;
+  required uint32 chunkNumber = 2;
+}
+
+message RequestFileEndMd5 {
+  required uint32 fileId = 1;
+}
+
+message Message {
+  oneof message {
+    NewUserRequest newUserRequest = 1;
+    ReplyUserResponse replyUserResponse = 2;
+    RequestStartSendingFile requestStartSendingFile = 3;
+    ReplyStartSendingFile replyStartSendingFile = 4;
+    FileChunk fileChunk = 5;
+    RequestFileChunk requestFileChunk = 6;
+    FileEndMd5 fileEndMd5 = 7;
+    RequestFileEndMd5 requestFileEndMd5 = 8;
+  }
+}
