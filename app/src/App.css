@@ -1,0 +1,33 @@
+.Row {
+  display: table;
+  width: 100%; /*Optional*/
+  table-layout: fixed; /*Optional*/
+  border-spacing: 10px; /*Optional*/
+}
+.Column {
+  display: table-cell;
+}
+
+.verticalTable {
+  border-collapse: collapse;
+}
+
+.verticalTable td {
+  text-align: center;
+  padding: 0 0.5em;
+  border: 1px solid grey;
+}
+
+.horizontalTable {
+  border-collapse: collapse;
+}
+
+.horizontalTable tr:nth-child(2) td{
+  text-align: center;
+  padding: 0 0.5em;
+  border: 1px solid grey;
+}
+
+.finalText {
+  white-space: pre-wrap;
+}
