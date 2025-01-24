@@ -42,7 +42,7 @@ export function SendFile(props: SendFileProps) {
                     } catch (e) {
                         setIsPortValid(false);
                     }
-                }} type="number" />
+                }} type="number" defaultValue={port} />
             </span>
             <span>
                 <label>Chunk size</label>

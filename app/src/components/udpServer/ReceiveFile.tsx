@@ -34,9 +34,10 @@ export function ReceiveFile(props: ReceiveFileProps) {
     }, []);
 
     let [buttonText, setButtonText] = useState('')
+
     useEffect(() => {
         if (request) {
-            setButtonText(`Receive file ${request.startRequest.fileName} from ${request.from}`)
+            setButtonText(`Receive file ${request.startRequest.fileName} from ${request.from.address}:${request.from.port}`)
         }
     }, [request]);
     const [md5Value, setMd5Value] = useState<null | string>(null);
@@ -56,18 +57,13 @@ export function ReceiveFile(props: ReceiveFileProps) {
                     if (r.err !== undefined) {
                         setError(r.err)
                     } else {
-                        setMd5Value(r.md5.toString("hex"));
                         await fs.writeFile(request.startRequest.fileName, r.buffer);
+                        setMd5Value(r.md5.toString("hex"));
                         setRequest(null);
                     }
-                    // if (!!r.err) {
-                    //     setError(r.err);
-                    // } else {
-
-                    // }
                 })();
             }}>{buttonText}</Button>}
-            {md5Value && <label>The md5 value is the same: {md5Value}</label>}
+            {md5Value && <label>The md5 value is the same: {md5Value}. The file was saved</label>}
             {error && <ErrorText>{error}</ErrorText>}
         </Container>
     );
