@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import { UdpServerImpl } from "../udpServer/index";
 import { ReceiveFile } from "../components/udpServer/ReceiveFile";
 
+
 interface UdpServerProps {
 }
 
 
 export function UdpServer(props: UdpServerProps) {
-
     let [serverState, setServerState] = useState<UdpServerImpl | null>(null);
     let [error, setError] = useState<string | null>(null);
     useEffect(() => {
@@ -22,8 +22,6 @@ export function UdpServer(props: UdpServerProps) {
                         setServerState(server);
                         console.log("It worked on port ", i)
                         break;
-                    } else {
-                        setError(`Error binding on port ${i}`);
                     }
                 }
 

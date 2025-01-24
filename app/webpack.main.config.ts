@@ -15,7 +15,7 @@ export const mainConfig: Configuration = {
   },
   plugins,
   resolve: {
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],
+    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json', '.node'],
     fullySpecified: false,
     fallback: {
       // "fs": false,
@@ -23,5 +23,8 @@ export const mainConfig: Configuration = {
       // "path": false
     }
   },
-  target: "electron-main"
+  target: "electron-main",
+  node: {
+    __dirname: false,
+  }
 };

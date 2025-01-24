@@ -73,6 +73,8 @@ export class UdpServerImpl extends EventEmitter<LocalEventTypes> {
 
     async receiveFile(request: udpServerProtocol.IRequestStartSendingFile, from: dgram.RemoteInfo, path: string): Promise<{
         buffer: Buffer,
+        md5: Buffer,
+        err: undefined
     } | {
         err: string
     }> {
@@ -149,7 +151,7 @@ export class UdpServerImpl extends EventEmitter<LocalEventTypes> {
         clearTimeout(timeoutId)
         if (r === null) {
             return {
-                err: "didn't receive the full message"
+                err: "didn't receive the full message",
             }
         }
         let totalSize = 0;
@@ -166,7 +168,9 @@ export class UdpServerImpl extends EventEmitter<LocalEventTypes> {
             }
         }
         return {
-            buffer: fileContent
+            buffer: fileContent,
+            md5,
+            err: undefined
         }
     }
 
