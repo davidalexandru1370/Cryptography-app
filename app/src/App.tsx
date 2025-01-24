@@ -2,6 +2,7 @@ import * as React from "react";
 import { createRoot } from "react-dom/client";
 import { UdpServer } from "./pages/UdpServer";
 import { TimeComparisons } from "./pages/TimeComparions";
+import Manual from "./pages/Manual";
 
 const rootElement = document.getElementById("root")!;
 const root = createRoot(rootElement);
@@ -22,7 +23,8 @@ const Main: React.FC = () => {
       style={{
         display: "flex",
         flexDirection: "column",
-        width: "100%",
+        width: "80%",
+        justifyContent: "center",
         height: "100%",
       }}
     >
@@ -39,8 +41,16 @@ const Main: React.FC = () => {
       </div>
       <div style={{ flexGrow: 1 }}>
         {selectedIndex === 0 && <UdpServer />}
-        {selectedIndex === 1 && <div>Time</div>}
-        {selectedIndex === 2 && <div>Manual MD5</div>}
+        {selectedIndex === 1 && (
+          <div>
+            <TimeComparisons />
+          </div>
+        )}
+        {selectedIndex === 2 && (
+          <div>
+            <Manual />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -48,6 +58,6 @@ const Main: React.FC = () => {
 
 root.render(
   <React.StrictMode>
-    <TimeComparisons />
+    <Main />
   </React.StrictMode>
 );
