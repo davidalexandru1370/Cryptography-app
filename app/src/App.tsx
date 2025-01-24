@@ -1,6 +1,7 @@
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import { UdpServer } from "./pages/UdpServer";
+import { TimeComparisons } from "./pages/TimeComparions";
 
 const rootElement = document.getElementById("root")!;
 const root = createRoot(rootElement);
@@ -47,6 +48,6 @@ const Main: React.FC = () => {
 
 root.render(
   <React.StrictMode>
-    <UdpServer />
+    <TimeComparisons />
   </React.StrictMode>
 );
