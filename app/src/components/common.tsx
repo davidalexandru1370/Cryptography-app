@@ -35,8 +35,7 @@ export const InputWrapper = styled.div`
 // `;
 
 export const StyledInput = styled.input`
-  width: 100%;
-  margin-bottom: 20em;
+  margin-bottom: 1em;
 `
 
 export const ErrorText = styled.span`

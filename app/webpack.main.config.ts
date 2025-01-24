@@ -16,5 +16,12 @@ export const mainConfig: Configuration = {
   plugins,
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],
+    fullySpecified: false,
+    fallback: {
+      // "fs": false,
+      // "crypto": false,
+      // "path": false
+    }
   },
+  target: "electron-main"
 };
