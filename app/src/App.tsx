@@ -10,6 +10,5 @@ root.render(
     <div>
       <p>Hello davis</p>
     </div>
-    <UdpServer></UdpServer>
   </React.StrictMode>
 );
