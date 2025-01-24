@@ -1,7 +1,7 @@
 import * as $protobuf from "protobufjs";
 import Long = require("long");
-/** Namespace udp_server. */
-export namespace udp_server {
+/** Namespace udpServerProtocol. */
+export namespace udpServerProtocol {
 
     /** Properties of a NewUserRequest. */
     interface INewUserRequest {
@@ -17,7 +17,7 @@ export namespace udp_server {
          * Constructs a new NewUserRequest.
          * @param [properties] Properties to set
          */
-        constructor(properties?: udp_server.INewUserRequest);
+        constructor(properties?: udpServerProtocol.INewUserRequest);
 
         /** NewUserRequest name. */
         public name: string;
@@ -27,23 +27,23 @@ export namespace udp_server {
          * @param [properties] Properties to set
          * @returns NewUserRequest instance
          */
-        public static create(properties?: udp_server.INewUserRequest): udp_server.NewUserRequest;
+        public static create(properties?: udpServerProtocol.INewUserRequest): udpServerProtocol.NewUserRequest;
 
         /**
-         * Encodes the specified NewUserRequest message. Does not implicitly {@link udp_server.NewUserRequest.verify|verify} messages.
+         * Encodes the specified NewUserRequest message. Does not implicitly {@link udpServerProtocol.NewUserRequest.verify|verify} messages.
          * @param message NewUserRequest message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: udp_server.INewUserRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: udpServerProtocol.INewUserRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified NewUserRequest message, length delimited. Does not implicitly {@link udp_server.NewUserRequest.verify|verify} messages.
+         * Encodes the specified NewUserRequest message, length delimited. Does not implicitly {@link udpServerProtocol.NewUserRequest.verify|verify} messages.
          * @param message NewUserRequest message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: udp_server.INewUserRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: udpServerProtocol.INewUserRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a NewUserRequest message from the specified reader or buffer.
@@ -53,7 +53,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udp_server.NewUserRequest;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udpServerProtocol.NewUserRequest;
 
         /**
          * Decodes a NewUserRequest message from the specified reader or buffer, length delimited.
@@ -62,7 +62,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udp_server.NewUserRequest;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udpServerProtocol.NewUserRequest;
 
         /**
          * Verifies a NewUserRequest message.
@@ -76,7 +76,7 @@ export namespace udp_server {
          * @param object Plain object
          * @returns NewUserRequest
          */
-        public static fromObject(object: { [k: string]: any }): udp_server.NewUserRequest;
+        public static fromObject(object: { [k: string]: any }): udpServerProtocol.NewUserRequest;
 
         /**
          * Creates a plain object from a NewUserRequest message. Also converts values to other types if specified.
@@ -84,7 +84,7 @@ export namespace udp_server {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: udp_server.NewUserRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: udpServerProtocol.NewUserRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this NewUserRequest to JSON.
@@ -114,7 +114,7 @@ export namespace udp_server {
          * Constructs a new ReplyUserResponse.
          * @param [properties] Properties to set
          */
-        constructor(properties?: udp_server.IReplyUserResponse);
+        constructor(properties?: udpServerProtocol.IReplyUserResponse);
 
         /** ReplyUserResponse name. */
         public name: string;
@@ -124,23 +124,23 @@ export namespace udp_server {
          * @param [properties] Properties to set
          * @returns ReplyUserResponse instance
          */
-        public static create(properties?: udp_server.IReplyUserResponse): udp_server.ReplyUserResponse;
+        public static create(properties?: udpServerProtocol.IReplyUserResponse): udpServerProtocol.ReplyUserResponse;
 
         /**
-         * Encodes the specified ReplyUserResponse message. Does not implicitly {@link udp_server.ReplyUserResponse.verify|verify} messages.
+         * Encodes the specified ReplyUserResponse message. Does not implicitly {@link udpServerProtocol.ReplyUserResponse.verify|verify} messages.
          * @param message ReplyUserResponse message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: udp_server.IReplyUserResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: udpServerProtocol.IReplyUserResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified ReplyUserResponse message, length delimited. Does not implicitly {@link udp_server.ReplyUserResponse.verify|verify} messages.
+         * Encodes the specified ReplyUserResponse message, length delimited. Does not implicitly {@link udpServerProtocol.ReplyUserResponse.verify|verify} messages.
          * @param message ReplyUserResponse message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: udp_server.IReplyUserResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: udpServerProtocol.IReplyUserResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ReplyUserResponse message from the specified reader or buffer.
@@ -150,7 +150,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udp_server.ReplyUserResponse;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udpServerProtocol.ReplyUserResponse;
 
         /**
          * Decodes a ReplyUserResponse message from the specified reader or buffer, length delimited.
@@ -159,7 +159,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udp_server.ReplyUserResponse;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udpServerProtocol.ReplyUserResponse;
 
         /**
          * Verifies a ReplyUserResponse message.
@@ -173,7 +173,7 @@ export namespace udp_server {
          * @param object Plain object
          * @returns ReplyUserResponse
          */
-        public static fromObject(object: { [k: string]: any }): udp_server.ReplyUserResponse;
+        public static fromObject(object: { [k: string]: any }): udpServerProtocol.ReplyUserResponse;
 
         /**
          * Creates a plain object from a ReplyUserResponse message. Also converts values to other types if specified.
@@ -181,7 +181,7 @@ export namespace udp_server {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: udp_server.ReplyUserResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: udpServerProtocol.ReplyUserResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ReplyUserResponse to JSON.
@@ -220,7 +220,7 @@ export namespace udp_server {
          * Constructs a new RequestStartSendingFile.
          * @param [properties] Properties to set
          */
-        constructor(properties?: udp_server.IRequestStartSendingFile);
+        constructor(properties?: udpServerProtocol.IRequestStartSendingFile);
 
         /** RequestStartSendingFile fileName. */
         public fileName: string;
@@ -239,23 +239,23 @@ export namespace udp_server {
          * @param [properties] Properties to set
          * @returns RequestStartSendingFile instance
          */
-        public static create(properties?: udp_server.IRequestStartSendingFile): udp_server.RequestStartSendingFile;
+        public static create(properties?: udpServerProtocol.IRequestStartSendingFile): udpServerProtocol.RequestStartSendingFile;
 
         /**
-         * Encodes the specified RequestStartSendingFile message. Does not implicitly {@link udp_server.RequestStartSendingFile.verify|verify} messages.
+         * Encodes the specified RequestStartSendingFile message. Does not implicitly {@link udpServerProtocol.RequestStartSendingFile.verify|verify} messages.
          * @param message RequestStartSendingFile message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: udp_server.IRequestStartSendingFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: udpServerProtocol.IRequestStartSendingFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified RequestStartSendingFile message, length delimited. Does not implicitly {@link udp_server.RequestStartSendingFile.verify|verify} messages.
+         * Encodes the specified RequestStartSendingFile message, length delimited. Does not implicitly {@link udpServerProtocol.RequestStartSendingFile.verify|verify} messages.
          * @param message RequestStartSendingFile message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: udp_server.IRequestStartSendingFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: udpServerProtocol.IRequestStartSendingFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a RequestStartSendingFile message from the specified reader or buffer.
@@ -265,7 +265,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udp_server.RequestStartSendingFile;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udpServerProtocol.RequestStartSendingFile;
 
         /**
          * Decodes a RequestStartSendingFile message from the specified reader or buffer, length delimited.
@@ -274,7 +274,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udp_server.RequestStartSendingFile;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udpServerProtocol.RequestStartSendingFile;
 
         /**
          * Verifies a RequestStartSendingFile message.
@@ -288,7 +288,7 @@ export namespace udp_server {
          * @param object Plain object
          * @returns RequestStartSendingFile
          */
-        public static fromObject(object: { [k: string]: any }): udp_server.RequestStartSendingFile;
+        public static fromObject(object: { [k: string]: any }): udpServerProtocol.RequestStartSendingFile;
 
         /**
          * Creates a plain object from a RequestStartSendingFile message. Also converts values to other types if specified.
@@ -296,7 +296,7 @@ export namespace udp_server {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: udp_server.RequestStartSendingFile, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: udpServerProtocol.RequestStartSendingFile, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this RequestStartSendingFile to JSON.
@@ -329,7 +329,7 @@ export namespace udp_server {
          * Constructs a new ReplyStartSendingFile.
          * @param [properties] Properties to set
          */
-        constructor(properties?: udp_server.IReplyStartSendingFile);
+        constructor(properties?: udpServerProtocol.IReplyStartSendingFile);
 
         /** ReplyStartSendingFile fileId. */
         public fileId: number;
@@ -342,23 +342,23 @@ export namespace udp_server {
          * @param [properties] Properties to set
          * @returns ReplyStartSendingFile instance
          */
-        public static create(properties?: udp_server.IReplyStartSendingFile): udp_server.ReplyStartSendingFile;
+        public static create(properties?: udpServerProtocol.IReplyStartSendingFile): udpServerProtocol.ReplyStartSendingFile;
 
         /**
-         * Encodes the specified ReplyStartSendingFile message. Does not implicitly {@link udp_server.ReplyStartSendingFile.verify|verify} messages.
+         * Encodes the specified ReplyStartSendingFile message. Does not implicitly {@link udpServerProtocol.ReplyStartSendingFile.verify|verify} messages.
          * @param message ReplyStartSendingFile message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: udp_server.IReplyStartSendingFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: udpServerProtocol.IReplyStartSendingFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified ReplyStartSendingFile message, length delimited. Does not implicitly {@link udp_server.ReplyStartSendingFile.verify|verify} messages.
+         * Encodes the specified ReplyStartSendingFile message, length delimited. Does not implicitly {@link udpServerProtocol.ReplyStartSendingFile.verify|verify} messages.
          * @param message ReplyStartSendingFile message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: udp_server.IReplyStartSendingFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: udpServerProtocol.IReplyStartSendingFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ReplyStartSendingFile message from the specified reader or buffer.
@@ -368,7 +368,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udp_server.ReplyStartSendingFile;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udpServerProtocol.ReplyStartSendingFile;
 
         /**
          * Decodes a ReplyStartSendingFile message from the specified reader or buffer, length delimited.
@@ -377,7 +377,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udp_server.ReplyStartSendingFile;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udpServerProtocol.ReplyStartSendingFile;
 
         /**
          * Verifies a ReplyStartSendingFile message.
@@ -391,7 +391,7 @@ export namespace udp_server {
          * @param object Plain object
          * @returns ReplyStartSendingFile
          */
-        public static fromObject(object: { [k: string]: any }): udp_server.ReplyStartSendingFile;
+        public static fromObject(object: { [k: string]: any }): udpServerProtocol.ReplyStartSendingFile;
 
         /**
          * Creates a plain object from a ReplyStartSendingFile message. Also converts values to other types if specified.
@@ -399,7 +399,7 @@ export namespace udp_server {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: udp_server.ReplyStartSendingFile, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: udpServerProtocol.ReplyStartSendingFile, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ReplyStartSendingFile to JSON.
@@ -435,7 +435,7 @@ export namespace udp_server {
          * Constructs a new FileChunk.
          * @param [properties] Properties to set
          */
-        constructor(properties?: udp_server.IFileChunk);
+        constructor(properties?: udpServerProtocol.IFileChunk);
 
         /** FileChunk fileId. */
         public fileId: number;
@@ -451,23 +451,23 @@ export namespace udp_server {
          * @param [properties] Properties to set
          * @returns FileChunk instance
          */
-        public static create(properties?: udp_server.IFileChunk): udp_server.FileChunk;
+        public static create(properties?: udpServerProtocol.IFileChunk): udpServerProtocol.FileChunk;
 
         /**
-         * Encodes the specified FileChunk message. Does not implicitly {@link udp_server.FileChunk.verify|verify} messages.
+         * Encodes the specified FileChunk message. Does not implicitly {@link udpServerProtocol.FileChunk.verify|verify} messages.
          * @param message FileChunk message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: udp_server.IFileChunk, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: udpServerProtocol.IFileChunk, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified FileChunk message, length delimited. Does not implicitly {@link udp_server.FileChunk.verify|verify} messages.
+         * Encodes the specified FileChunk message, length delimited. Does not implicitly {@link udpServerProtocol.FileChunk.verify|verify} messages.
          * @param message FileChunk message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: udp_server.IFileChunk, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: udpServerProtocol.IFileChunk, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a FileChunk message from the specified reader or buffer.
@@ -477,7 +477,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udp_server.FileChunk;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udpServerProtocol.FileChunk;
 
         /**
          * Decodes a FileChunk message from the specified reader or buffer, length delimited.
@@ -486,7 +486,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udp_server.FileChunk;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udpServerProtocol.FileChunk;
 
         /**
          * Verifies a FileChunk message.
@@ -500,7 +500,7 @@ export namespace udp_server {
          * @param object Plain object
          * @returns FileChunk
          */
-        public static fromObject(object: { [k: string]: any }): udp_server.FileChunk;
+        public static fromObject(object: { [k: string]: any }): udpServerProtocol.FileChunk;
 
         /**
          * Creates a plain object from a FileChunk message. Also converts values to other types if specified.
@@ -508,7 +508,7 @@ export namespace udp_server {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: udp_server.FileChunk, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: udpServerProtocol.FileChunk, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this FileChunk to JSON.
@@ -541,7 +541,7 @@ export namespace udp_server {
          * Constructs a new FileEndMd5.
          * @param [properties] Properties to set
          */
-        constructor(properties?: udp_server.IFileEndMd5);
+        constructor(properties?: udpServerProtocol.IFileEndMd5);
 
         /** FileEndMd5 fileId. */
         public fileId: number;
@@ -554,23 +554,23 @@ export namespace udp_server {
          * @param [properties] Properties to set
          * @returns FileEndMd5 instance
          */
-        public static create(properties?: udp_server.IFileEndMd5): udp_server.FileEndMd5;
+        public static create(properties?: udpServerProtocol.IFileEndMd5): udpServerProtocol.FileEndMd5;
 
         /**
-         * Encodes the specified FileEndMd5 message. Does not implicitly {@link udp_server.FileEndMd5.verify|verify} messages.
+         * Encodes the specified FileEndMd5 message. Does not implicitly {@link udpServerProtocol.FileEndMd5.verify|verify} messages.
          * @param message FileEndMd5 message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: udp_server.IFileEndMd5, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: udpServerProtocol.IFileEndMd5, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified FileEndMd5 message, length delimited. Does not implicitly {@link udp_server.FileEndMd5.verify|verify} messages.
+         * Encodes the specified FileEndMd5 message, length delimited. Does not implicitly {@link udpServerProtocol.FileEndMd5.verify|verify} messages.
          * @param message FileEndMd5 message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: udp_server.IFileEndMd5, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: udpServerProtocol.IFileEndMd5, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a FileEndMd5 message from the specified reader or buffer.
@@ -580,7 +580,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udp_server.FileEndMd5;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udpServerProtocol.FileEndMd5;
 
         /**
          * Decodes a FileEndMd5 message from the specified reader or buffer, length delimited.
@@ -589,7 +589,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udp_server.FileEndMd5;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udpServerProtocol.FileEndMd5;
 
         /**
          * Verifies a FileEndMd5 message.
@@ -603,7 +603,7 @@ export namespace udp_server {
          * @param object Plain object
          * @returns FileEndMd5
          */
-        public static fromObject(object: { [k: string]: any }): udp_server.FileEndMd5;
+        public static fromObject(object: { [k: string]: any }): udpServerProtocol.FileEndMd5;
 
         /**
          * Creates a plain object from a FileEndMd5 message. Also converts values to other types if specified.
@@ -611,7 +611,7 @@ export namespace udp_server {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: udp_server.FileEndMd5, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: udpServerProtocol.FileEndMd5, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this FileEndMd5 to JSON.
@@ -644,7 +644,7 @@ export namespace udp_server {
          * Constructs a new RequestFileChunk.
          * @param [properties] Properties to set
          */
-        constructor(properties?: udp_server.IRequestFileChunk);
+        constructor(properties?: udpServerProtocol.IRequestFileChunk);
 
         /** RequestFileChunk fileId. */
         public fileId: number;
@@ -657,23 +657,23 @@ export namespace udp_server {
          * @param [properties] Properties to set
          * @returns RequestFileChunk instance
          */
-        public static create(properties?: udp_server.IRequestFileChunk): udp_server.RequestFileChunk;
+        public static create(properties?: udpServerProtocol.IRequestFileChunk): udpServerProtocol.RequestFileChunk;
 
         /**
-         * Encodes the specified RequestFileChunk message. Does not implicitly {@link udp_server.RequestFileChunk.verify|verify} messages.
+         * Encodes the specified RequestFileChunk message. Does not implicitly {@link udpServerProtocol.RequestFileChunk.verify|verify} messages.
          * @param message RequestFileChunk message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: udp_server.IRequestFileChunk, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: udpServerProtocol.IRequestFileChunk, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified RequestFileChunk message, length delimited. Does not implicitly {@link udp_server.RequestFileChunk.verify|verify} messages.
+         * Encodes the specified RequestFileChunk message, length delimited. Does not implicitly {@link udpServerProtocol.RequestFileChunk.verify|verify} messages.
          * @param message RequestFileChunk message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: udp_server.IRequestFileChunk, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: udpServerProtocol.IRequestFileChunk, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a RequestFileChunk message from the specified reader or buffer.
@@ -683,7 +683,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udp_server.RequestFileChunk;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udpServerProtocol.RequestFileChunk;
 
         /**
          * Decodes a RequestFileChunk message from the specified reader or buffer, length delimited.
@@ -692,7 +692,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udp_server.RequestFileChunk;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udpServerProtocol.RequestFileChunk;
 
         /**
          * Verifies a RequestFileChunk message.
@@ -706,7 +706,7 @@ export namespace udp_server {
          * @param object Plain object
          * @returns RequestFileChunk
          */
-        public static fromObject(object: { [k: string]: any }): udp_server.RequestFileChunk;
+        public static fromObject(object: { [k: string]: any }): udpServerProtocol.RequestFileChunk;
 
         /**
          * Creates a plain object from a RequestFileChunk message. Also converts values to other types if specified.
@@ -714,7 +714,7 @@ export namespace udp_server {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: udp_server.RequestFileChunk, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: udpServerProtocol.RequestFileChunk, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this RequestFileChunk to JSON.
@@ -744,7 +744,7 @@ export namespace udp_server {
          * Constructs a new RequestFileEndMd5.
          * @param [properties] Properties to set
          */
-        constructor(properties?: udp_server.IRequestFileEndMd5);
+        constructor(properties?: udpServerProtocol.IRequestFileEndMd5);
 
         /** RequestFileEndMd5 fileId. */
         public fileId: number;
@@ -754,23 +754,23 @@ export namespace udp_server {
          * @param [properties] Properties to set
          * @returns RequestFileEndMd5 instance
          */
-        public static create(properties?: udp_server.IRequestFileEndMd5): udp_server.RequestFileEndMd5;
+        public static create(properties?: udpServerProtocol.IRequestFileEndMd5): udpServerProtocol.RequestFileEndMd5;
 
         /**
-         * Encodes the specified RequestFileEndMd5 message. Does not implicitly {@link udp_server.RequestFileEndMd5.verify|verify} messages.
+         * Encodes the specified RequestFileEndMd5 message. Does not implicitly {@link udpServerProtocol.RequestFileEndMd5.verify|verify} messages.
          * @param message RequestFileEndMd5 message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: udp_server.IRequestFileEndMd5, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: udpServerProtocol.IRequestFileEndMd5, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified RequestFileEndMd5 message, length delimited. Does not implicitly {@link udp_server.RequestFileEndMd5.verify|verify} messages.
+         * Encodes the specified RequestFileEndMd5 message, length delimited. Does not implicitly {@link udpServerProtocol.RequestFileEndMd5.verify|verify} messages.
          * @param message RequestFileEndMd5 message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: udp_server.IRequestFileEndMd5, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: udpServerProtocol.IRequestFileEndMd5, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a RequestFileEndMd5 message from the specified reader or buffer.
@@ -780,7 +780,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udp_server.RequestFileEndMd5;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udpServerProtocol.RequestFileEndMd5;
 
         /**
          * Decodes a RequestFileEndMd5 message from the specified reader or buffer, length delimited.
@@ -789,7 +789,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udp_server.RequestFileEndMd5;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udpServerProtocol.RequestFileEndMd5;
 
         /**
          * Verifies a RequestFileEndMd5 message.
@@ -803,7 +803,7 @@ export namespace udp_server {
          * @param object Plain object
          * @returns RequestFileEndMd5
          */
-        public static fromObject(object: { [k: string]: any }): udp_server.RequestFileEndMd5;
+        public static fromObject(object: { [k: string]: any }): udpServerProtocol.RequestFileEndMd5;
 
         /**
          * Creates a plain object from a RequestFileEndMd5 message. Also converts values to other types if specified.
@@ -811,7 +811,7 @@ export namespace udp_server {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: udp_server.RequestFileEndMd5, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: udpServerProtocol.RequestFileEndMd5, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this RequestFileEndMd5 to JSON.
@@ -831,28 +831,28 @@ export namespace udp_server {
     interface IMessage {
 
         /** Message newUserRequest */
-        newUserRequest?: (udp_server.INewUserRequest|null);
+        newUserRequest?: (udpServerProtocol.INewUserRequest|null);
 
         /** Message replyUserResponse */
-        replyUserResponse?: (udp_server.IReplyUserResponse|null);
+        replyUserResponse?: (udpServerProtocol.IReplyUserResponse|null);
 
         /** Message requestStartSendingFile */
-        requestStartSendingFile?: (udp_server.IRequestStartSendingFile|null);
+        requestStartSendingFile?: (udpServerProtocol.IRequestStartSendingFile|null);
 
         /** Message replyStartSendingFile */
-        replyStartSendingFile?: (udp_server.IReplyStartSendingFile|null);
+        replyStartSendingFile?: (udpServerProtocol.IReplyStartSendingFile|null);
 
         /** Message fileChunk */
-        fileChunk?: (udp_server.IFileChunk|null);
+        fileChunk?: (udpServerProtocol.IFileChunk|null);
 
         /** Message requestFileChunk */
-        requestFileChunk?: (udp_server.IRequestFileChunk|null);
+        requestFileChunk?: (udpServerProtocol.IRequestFileChunk|null);
 
         /** Message fileEndMd5 */
-        fileEndMd5?: (udp_server.IFileEndMd5|null);
+        fileEndMd5?: (udpServerProtocol.IFileEndMd5|null);
 
         /** Message requestFileEndMd5 */
-        requestFileEndMd5?: (udp_server.IRequestFileEndMd5|null);
+        requestFileEndMd5?: (udpServerProtocol.IRequestFileEndMd5|null);
     }
 
     /** Represents a Message. */
@@ -862,31 +862,31 @@ export namespace udp_server {
          * Constructs a new Message.
          * @param [properties] Properties to set
          */
-        constructor(properties?: udp_server.IMessage);
+        constructor(properties?: udpServerProtocol.IMessage);
 
         /** Message newUserRequest. */
-        public newUserRequest?: (udp_server.INewUserRequest|null);
+        public newUserRequest?: (udpServerProtocol.INewUserRequest|null);
 
         /** Message replyUserResponse. */
-        public replyUserResponse?: (udp_server.IReplyUserResponse|null);
+        public replyUserResponse?: (udpServerProtocol.IReplyUserResponse|null);
 
         /** Message requestStartSendingFile. */
-        public requestStartSendingFile?: (udp_server.IRequestStartSendingFile|null);
+        public requestStartSendingFile?: (udpServerProtocol.IRequestStartSendingFile|null);
 
         /** Message replyStartSendingFile. */
-        public replyStartSendingFile?: (udp_server.IReplyStartSendingFile|null);
+        public replyStartSendingFile?: (udpServerProtocol.IReplyStartSendingFile|null);
 
         /** Message fileChunk. */
-        public fileChunk?: (udp_server.IFileChunk|null);
+        public fileChunk?: (udpServerProtocol.IFileChunk|null);
 
         /** Message requestFileChunk. */
-        public requestFileChunk?: (udp_server.IRequestFileChunk|null);
+        public requestFileChunk?: (udpServerProtocol.IRequestFileChunk|null);
 
         /** Message fileEndMd5. */
-        public fileEndMd5?: (udp_server.IFileEndMd5|null);
+        public fileEndMd5?: (udpServerProtocol.IFileEndMd5|null);
 
         /** Message requestFileEndMd5. */
-        public requestFileEndMd5?: (udp_server.IRequestFileEndMd5|null);
+        public requestFileEndMd5?: (udpServerProtocol.IRequestFileEndMd5|null);
 
         /** Message message. */
         public message?: ("newUserRequest"|"replyUserResponse"|"requestStartSendingFile"|"replyStartSendingFile"|"fileChunk"|"requestFileChunk"|"fileEndMd5"|"requestFileEndMd5");
@@ -896,23 +896,23 @@ export namespace udp_server {
          * @param [properties] Properties to set
          * @returns Message instance
          */
-        public static create(properties?: udp_server.IMessage): udp_server.Message;
+        public static create(properties?: udpServerProtocol.IMessage): udpServerProtocol.Message;
 
         /**
-         * Encodes the specified Message message. Does not implicitly {@link udp_server.Message.verify|verify} messages.
+         * Encodes the specified Message message. Does not implicitly {@link udpServerProtocol.Message.verify|verify} messages.
          * @param message Message message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: udp_server.IMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: udpServerProtocol.IMessage, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Message message, length delimited. Does not implicitly {@link udp_server.Message.verify|verify} messages.
+         * Encodes the specified Message message, length delimited. Does not implicitly {@link udpServerProtocol.Message.verify|verify} messages.
          * @param message Message message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: udp_server.IMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: udpServerProtocol.IMessage, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Message message from the specified reader or buffer.
@@ -922,7 +922,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udp_server.Message;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): udpServerProtocol.Message;
 
         /**
          * Decodes a Message message from the specified reader or buffer, length delimited.
@@ -931,7 +931,7 @@ export namespace udp_server {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udp_server.Message;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): udpServerProtocol.Message;
 
         /**
          * Verifies a Message message.
@@ -945,7 +945,7 @@ export namespace udp_server {
          * @param object Plain object
          * @returns Message
          */
-        public static fromObject(object: { [k: string]: any }): udp_server.Message;
+        public static fromObject(object: { [k: string]: any }): udpServerProtocol.Message;
 
         /**
          * Creates a plain object from a Message message. Also converts values to other types if specified.
@@ -953,7 +953,7 @@ export namespace udp_server {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: udp_server.Message, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: udpServerProtocol.Message, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Message to JSON.

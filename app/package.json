@@ -10,7 +10,7 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "eslint --ext .ts,.tsx .",
-    "proto": "pbjs -t static-module -w commonjs -o src/udp_server/compiled.js udp_protocol.proto && pbts -o src/udp_server/compiled.d.ts src/udp_server/compiled.js"
+    "proto": "pbjs -t static-module -w commonjs -o src/udpServer/compiled.js udpProtocol.proto && pbts -o src/udpServer/compiled.d.ts src/udpServer/compiled.js"
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.6.0",
@@ -46,9 +46,11 @@
   },
   "license": "MIT",
   "dependencies": {
+    "baseui": "^15.0.0",
     "electron-squirrel-startup": "^1.0.1",
     "protobufjs": "^7.4.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "styled-components": "^6.1.14"
   }
 }

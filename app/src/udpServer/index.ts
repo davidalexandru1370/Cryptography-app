@@ -1,5 +1,5 @@
 import protobuf from 'protobufjs';
-import { udp_server } from './compiled';
+import { udpServerProtocol } from './compiled';
 import dgram from "node:dgram"
 import { randomInt } from 'node:crypto';
 import path from 'node:path';
@@ -17,12 +17,12 @@ interface FileReceiveInfo {
 }
 
 type LocalEventTypes = {
-    'startFileTransfer': [startRequest: udp_server.IRequestStartSendingFile, from: dgram.RemoteInfo]
+    'startFileTransfer': [startRequest: udpServerProtocol.IRequestStartSendingFile, from: dgram.RemoteInfo]
 }
 
 const MAX_UINT32 = Math.pow(2, 64)
 
-class UdpServer extends EventEmitter<LocalEventTypes> {
+export class UdpServerImpl extends EventEmitter<LocalEventTypes> {
     socket: dgram.Socket
     id: number
     constructor() {
@@ -52,14 +52,14 @@ class UdpServer extends EventEmitter<LocalEventTypes> {
     }
 
 
-    async receiveFile(request: udp_server.IRequestStartSendingFile, from: dgram.RemoteInfo, path: string): Promise<{
+    async receiveFile(request: udpServerProtocol.IRequestStartSendingFile, from: dgram.RemoteInfo, path: string): Promise<{
         buffer: Buffer,
     } | {
         err: string
     }> {
         let serverFileId = this.id;
         this.id = (this.id + 1) % MAX_UINT32;
-        await this.sendMessage(udp_server.Message.create({
+        await this.sendMessage(udpServerProtocol.Message.create({
             replyStartSendingFile: {
                 serverFileId,
                 fileId: request.fileId
@@ -78,7 +78,7 @@ class UdpServer extends EventEmitter<LocalEventTypes> {
             (async () => {
                 for (let i = 0; i < fileChunks.length; i++) {
                     if (!!fileChunks[i]) {
-                        await obj.sendMessage(udp_server.Message.create({
+                        await obj.sendMessage(udpServerProtocol.Message.create({
                             requestFileChunk: {
                                 fileId: serverFileId,
                                 chunkNumber: i
@@ -87,7 +87,7 @@ class UdpServer extends EventEmitter<LocalEventTypes> {
                     }
                 }
                 if (md5Fragment) {
-                    await obj.sendMessage(udp_server.Message.create({
+                    await obj.sendMessage(udpServerProtocol.Message.create({
                         requestFileEndMd5: {
                             fileId: serverFileId,
                         }
@@ -130,7 +130,7 @@ class UdpServer extends EventEmitter<LocalEventTypes> {
         }
         let totalSize = 0;
         for (let chunk of fileChunks) {
-            totalSize += chunk.length
+            totalSize += chunk?.length ?? 0
         }
         let fileContent = Buffer.concat(fileChunks);
         let md5 = crypto.createHash('md5').update(fileContent).digest()
@@ -144,7 +144,7 @@ class UdpServer extends EventEmitter<LocalEventTypes> {
         }
     }
 
-    async waitForMessage<T>(filter: (msg: udp_server.Message, rinfo: dgram.RemoteInfo) => T | null, timeout: number = 1000, abort: AbortSignal | null = null): Promise<T | null> {
+    async waitForMessage<T>(filter: (msg: udpServerProtocol.Message, rinfo: dgram.RemoteInfo) => T | null, timeout: number = 1000, abort: AbortSignal | null = null): Promise<T | null> {
         let obj = this
         return new Promise<T | null>((resolve, reject) => {
             abort.addEventListener("abort", () => {
@@ -160,7 +160,7 @@ class UdpServer extends EventEmitter<LocalEventTypes> {
                 this.socket.off("message", x);
             })
             function x(msg: Buffer, rinfo: dgram.RemoteInfo) {
-                let message = udp_server.Message.decode(msg);
+                let message = udpServerProtocol.Message.decode(msg);
                 let v = filter(message, rinfo)
                 if (v) {
                     clearTimeout(id)
@@ -235,9 +235,9 @@ class UdpServer extends EventEmitter<LocalEventTypes> {
     }
 
 
-    async sendMessage(message: udp_server.IMessage, address: string, port: number) {
+    async sendMessage(message: udpServerProtocol.IMessage, address: string, port: number) {
         return new Promise<void>((resolve, reject) => {
-            this.socket.send(udp_server.Message.encode(message).finish(), port, address, (error, bytes) => {
+            this.socket.send(udpServerProtocol.Message.encode(message).finish(), port, address, (error, bytes) => {
                 if (error) {
                     reject(error)
                 } else {
