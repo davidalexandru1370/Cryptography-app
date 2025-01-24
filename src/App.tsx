@@ -429,7 +429,7 @@ useEffect(() => {
     </Form>
     </div>
     }
-    { !showFinal && !showInitial && 
+    { !showInitial && 
     <div>
     <div className="Row">
     <Table className="horizontalTable">
@@ -513,13 +513,14 @@ useEffect(() => {
       </Table>
       </div>
     </div>
+    </div>}
+    { !showFinal && !showInitial && 
     <div className="Row">
       <Button variant="primary"
           onClick={nextBlock}
       >
           Click me!
       </Button>
-    </div>
     </div>}
     <div className="Row">
     { showFinal && 
