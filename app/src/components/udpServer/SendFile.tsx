@@ -18,24 +18,31 @@ export function SendFile(props: SendFileProps) {
     } = useFilePicker()
 
     const [disabled, setDisabled] = useState(false);
+    const [host, setHost] = useState('127.0.0.1');
     const [port, setPort] = useState(3010);
     const [chunkSize, setChunkSize] = useState(100);
     const [error, setError] = useState<null | string>(null);
+    const [isPortValid, setIsPortValid] = useState(true);
+
     return (
         <Container>
             <span>
-                <label>User to receive</label>
-                <StyledInput id="port" onChange={(el: any) => {
-                    console.log(el.target.value)
+                <label>User host to receive the file</label>
+                <StyledInput onChange={(el: any) => {
+                    setHost(el.target.value)
+                }} value={host} />
+            </span>
+            <span>
+                <label>User port to receive the file</label>
+                <StyledInput onChange={(el: any) => {
                     try {
                         let p = parseInt(el.target.value);
-                        if (1 <= p && p <= 65535) {
-                            setPort(p)
-                        }
+                        setPort(p);
+                        setIsPortValid(true);
                     } catch (e) {
-
+                        setIsPortValid(false);
                     }
-                }} type="number" value={port} />
+                }} type="number" defaultValue={port} />
             </span>
             <span>
                 <label>Chunk size</label>
@@ -66,7 +73,7 @@ export function SendFile(props: SendFileProps) {
                     }
                     setDisabled(false)
                 })();
-            }} disabled={disabled}>Send file {files[0].name}</Button>}
+            }} disabled={disabled || !isPortValid}>Send file {files[0].name}</Button>}
             <HiddenFileInput accept="*" multiple={false}></HiddenFileInput>
             {error && <ErrorText>{error}</ErrorText>}
         </Container >
