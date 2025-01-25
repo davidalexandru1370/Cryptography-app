@@ -58,7 +58,10 @@ export function SendFile(props: SendFileProps) {
                     }
                 }} type="number" value={chunkSize} />
             </span>
-            <Button onClick={onClick}>Choose file</Button>
+            <Button onClick={() => {
+                onClick();
+                setError(null);
+            }} disabled={disabled}>Choose file</Button>
             {files && files[0] && <Button onClick={() => {
                 setDisabled(true);
                 let file = files![0];
@@ -68,6 +71,7 @@ export function SendFile(props: SendFileProps) {
                     let data2 = Buffer.from(data)
                     try {
                         await server.sendFile(file.name, data2, "0.0.0.0", port, chunkSize);
+                        setError(null);
                     } catch (e: any) {
                         setError(e.toString())
                     }
