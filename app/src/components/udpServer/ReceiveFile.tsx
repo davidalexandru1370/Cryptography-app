@@ -41,7 +41,7 @@ export function ReceiveFile(props: ReceiveFileProps) {
         }
     }, [request]);
     const [md5Value, setMd5Value] = useState<null | string>(null);
-
+    const [disabled, setDisabled] = useState(false);
     return (
         <Container>
             <span>
@@ -51,18 +51,27 @@ export function ReceiveFile(props: ReceiveFileProps) {
                 console.log("Start receiving file");
                 setError(null);
                 setMd5Value(null);
+                setDisabled(true);
                 (async () => {
-                    console.log("start receiving file");
-                    let r = await server.receiveFile(request.startRequest, request.from, request.startRequest.fileName);
-                    if (r.err !== undefined) {
-                        setError(r.err)
-                    } else {
-                        await fs.writeFile(request.startRequest.fileName, r.buffer);
-                        setMd5Value(r.md5.toString("hex"));
+                    try {
+                        console.log("start receiving file");
+                        let r = await server.receiveFile(request.startRequest, request.from, request.startRequest.fileName);
+                        if (r.err !== undefined) {
+                            setError(r.err)
+                        } else {
+                            await fs.writeFile(request.startRequest.fileName, r.buffer);
+                            setMd5Value(r.md5.toString("hex"));
+                            setRequest(null);
+                        }
+                    } catch (e: any) {
+                        setError(e.toString())
                         setRequest(null);
                     }
+                    finally {
+                        setDisabled(false);
+                    }
                 })();
-            }}>{buttonText}</Button>}
+            }} disabled={disabled}>{buttonText}</Button>}
             {md5Value && <label>The md5 value is the same: {md5Value}. The file was saved</label>}
             {error && <ErrorText>{error}</ErrorText>}
         </Container>
