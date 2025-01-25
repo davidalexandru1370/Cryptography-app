@@ -55,3 +55,9 @@ const Main: React.FC = () => {
     </div>
   );
 };
+
+root.render(
+  <React.StrictMode>
+    <Main />
+  </React.StrictMode>
+);
