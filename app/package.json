@@ -32,6 +32,7 @@
     "eslint": "^8.57.1",
     "eslint-plugin-import": "^2.31.0",
     "fork-ts-checker-webpack-plugin": "^7.3.0",
+    "native-ext-loader": "^2.3.0",
     "node-loader": "^2.1.0",
     "protobufjs-cli": "^1.1.3",
     "style-loader": "^3.3.4",
@@ -46,7 +47,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "algorithm-time": "file:../algorithm-time",
     "baseui": "^15.0.0",
     "electron-squirrel-startup": "^1.0.1",
     "protobufjs": "^7.4.0",
