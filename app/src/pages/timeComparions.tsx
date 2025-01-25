@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Md5 } from "ts-md5";
-
+const times = require('../index.node');
 interface EncryptResult {
   timeTaken: number;
   hash: string;
@@ -44,6 +44,9 @@ export const TimeComparisons = () => {
   const [sha1EncryptResult, setSha1EncryptResult] =
     useState<EncryptResult | null>(null);
   const [sha256EncryptResult, setSha256EncryptResult] =
+    useState<EncryptResult | null>(null);
+
+  const [sha512EncryptResult, setSha512EncryptResult] =
     useState<EncryptResult | null>(null);
 
   const handleMd5Hash = (numberOfCharacters: number) => {
@@ -122,10 +125,24 @@ export const TimeComparisons = () => {
           setMd5EncryptResult(null);
           setSha1EncryptResult(null);
           setSha256EncryptResult(null);
-
-          handleMd5Hash(numberOfCharacters);
-          await handleSha1Hash(numberOfCharacters);
-          await handleSha256Hash(numberOfCharacters);
+          setSha512EncryptResult(null);
+          const { md5, sha1, sha256, sha512, md5Hash, sha1Hash, sha256Hash, sha512Hash } = await times.computeTime("a".repeat(numberOfCharacters), 1000);
+          setMd5EncryptResult({
+            timeTaken: md5,
+            hash: md5Hash
+          });
+          setSha1EncryptResult({
+            timeTaken: sha1,
+            hash: sha1Hash
+          });
+          setSha256EncryptResult({
+            hash: sha256Hash,
+            timeTaken: sha256
+          });
+          setSha512EncryptResult({
+            hash: sha512Hash,
+            timeTaken: sha512
+          });
         }}
       >
         Compare hash times
@@ -168,6 +185,13 @@ export const TimeComparisons = () => {
         <div>
           {sha256EncryptResult !== null ? (
             <EncryptComponent {...sha256EncryptResult} name="SHA-256" />
+          ) : (
+            <p> Loading...</p>
+          )}
+        </div>
+        <div>
+          {sha512EncryptResult !== null ? (
+            <EncryptComponent {...sha512EncryptResult} name="SHA-512" />
           ) : (
             <p> Loading...</p>
           )}
