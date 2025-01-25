@@ -2,7 +2,7 @@ import type { Configuration } from 'webpack';
 
 import { rules } from './webpack.rules';
 import { plugins } from './webpack.plugins';
-
+import path from "node:path"
 export const mainConfig: Configuration = {
   /**
    * This is the main entry point for your application, it's the first file
@@ -20,11 +20,12 @@ export const mainConfig: Configuration = {
     fallback: {
       // "fs": false,
       // "crypto": false,
-      // "path": false
+      "path": false
     }
   },
-  target: "electron-main",
-  node: {
-    __dirname: false,
-  }
+  externals: {
+    // 'algorithm-time': "commonjs algorithm-time",
+    // "../algorithm-time/index.node": "commonjs ../algorithm-time/index.node"
+  },
+  target: "electron-main"
 };

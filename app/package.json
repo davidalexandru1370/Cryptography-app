@@ -46,6 +46,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "algorithm-time": "file:../algorithm-time",
     "baseui": "^15.0.0",
     "electron-squirrel-startup": "^1.0.1",
     "protobufjs": "^7.4.0",
